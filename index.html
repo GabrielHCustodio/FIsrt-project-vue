@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="src/app.js" defer></script>
+    <title>Teste VUE JS!</title>
+</head>
+<body>
+
+    <div id="app">
+        <form id="app-form">
+            <input type="text" v-model="input_name" v-bind:placeholder="placeholder">
+            <input type="submit" v-bind:value="valor" @click="submitForm">
+        </form>
+
+        <h1>O meu nome é {{ name }}</h1>
+        <h1>Usando binding é {{ input_name }}</h1>
+    </div>
+
+</body>
+</html>
