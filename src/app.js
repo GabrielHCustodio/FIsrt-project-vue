@@ -1,21 +1,18 @@
 const MyNameApp = {
     data() {
         return {
-            name: "",
-            input_name: "",
-            n1: 10,
-            n2: 5,
-            valor: "Enviar",
-            placeholder: "Digite seu nome..."
+            cor: "branco",
+            posicaoX: 0,
+            posicaoY: 0
         }
     },
     methods: {
-        submitForm(e) {
-            e.preventDefault();
-
-            console.log(this.input_name)
-
-            this.name = this.input_name
+        mudarCor(c) {
+            this.cor = c
+        },
+        coordenadas(e) {
+            this.posicaoX = e.clientX
+            this.posicaoY = e.clientY
         }
     }
 }

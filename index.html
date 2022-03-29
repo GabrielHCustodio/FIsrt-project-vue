@@ -12,13 +12,28 @@
 <body>
 
     <div id="app">
-        <form id="app-form">
-            <input type="text" v-model="input_name" v-bind:placeholder="placeholder">
-            <input type="submit" v-bind:value="valor" @click="submitForm">
-        </form>
+        <div class="borda div-principal" :class="cor">
+            Cor : {{ cor}} <br>
+            Posição X = {{ posicaoX }} <br>
+            Posição Y = {{ posicaoY }}
+        </div>
+        <hr>
 
-        <h1>O meu nome é {{ name }}</h1>
-        <h1>Usando binding é {{ input_name }}</h1>
+        <div 
+            class="borda div-auxiliar" 
+            @click="mudarCor('verde')">
+        </div>
+
+        <div 
+            class="borda div-auxiliar" 
+            @mouseover="mudarCor('azul')"
+            @mouseout="mudarCor('vermelho')">
+        </div>
+
+        <div 
+            class="borda div-auxiliar"
+            @mousemove="coordenadas($event)">
+        </div>
     </div>
 
 </body>
