@@ -1,18 +1,24 @@
 const MyNameApp = {
     data() {
         return {
-            cor: "branco",
-            posicaoX: 0,
-            posicaoY: 0
+            msg: '',
+            cliques: '',
+            formulario:'',
+            teclas: ''
         }
     },
     methods: {
-        mudarCor(c) {
-            this.cor = c
+        prevenirComportamento() {
+            this.msg = 'Comportamento padrão ativo'
         },
-        coordenadas(e) {
-            this.posicaoX = e.clientX
-            this.posicaoY = e.clientY
+        executarUmaVez() {
+            this.cliques ++
+        },
+        prevenirUmaVez() {
+            this.formulario = 'Prevenindo comportamento padrão uma vez'
+        },
+        verificarTeclas(e) {
+            this.teclas += e.key
         }
     }
 }

@@ -12,28 +12,30 @@
 <body>
 
     <div id="app">
-        <div class="borda div-principal" :class="cor">
-            Cor : {{ cor}} <br>
-            Posição X = {{ posicaoX }} <br>
-            Posição Y = {{ posicaoY }}
-        </div>
+        <a href="https://google.com"
+           target="_blank"
+           @click.prevent="prevenirComportamento()"
+        >
+        Link
+        </a>
+        <p>Texto : {{ msg }} </p>
+
         <hr>
 
-        <div 
-            class="borda div-auxiliar" 
-            @click="mudarCor('verde')">
-        </div>
+        <button @click.once="executarUmaVez()">Enviar</button>
+        <p>Cliques : {{ cliques }}</p>
 
-        <div 
-            class="borda div-auxiliar" 
-            @mouseover="mudarCor('azul')"
-            @mouseout="mudarCor('vermelho')">
-        </div>
+        <hr>
 
-        <div 
-            class="borda div-auxiliar"
-            @mousemove="coordenadas($event)">
-        </div>
+        <form @submit.prevent.once="prevenirUmaVez()">
+            <button type="submit">Enviar</button>
+        </form>
+        <p>Formulario : {{ formulario }}</p>
+
+        <hr>
+
+        <input type="text" @keyup.Enter="verificarTeclas($event)">
+        <p>Teclas : {{ teclas }}</p>
     </div>
 
 </body>
