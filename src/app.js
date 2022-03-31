@@ -1,24 +1,18 @@
 const MyNameApp = {
     data() {
         return {
-            msg: '',
-            cliques: '',
-            formulario:'',
-            teclas: ''
+            saldo: 4725.90,
+            exibirSaldo: true,
+            idade: 0,
+            nota: 0
         }
     },
     methods: {
-        prevenirComportamento() {
-            this.msg = 'Comportamento padrão ativo'
+        setIdade() {
+            this.idade = inputIdade.value
         },
-        executarUmaVez() {
-            this.cliques ++
-        },
-        prevenirUmaVez() {
-            this.formulario = 'Prevenindo comportamento padrão uma vez'
-        },
-        verificarTeclas(e) {
-            this.teclas += e.key
+        setNota() {
+            this.nota = inputNota.value
         }
     }
 }

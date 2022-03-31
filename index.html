@@ -12,31 +12,28 @@
 <body>
 
     <div id="app">
-        <a href="https://google.com"
-           target="_blank"
-           @click.prevent="prevenirComportamento()"
-        >
-        Link
-        </a>
-        <p>Texto : {{ msg }} </p>
-
+        <!-- Teste v-if -->
+        <button @click="exibirSaldo = !exibirSaldo">
+            <span v-if="!exibirSaldo">Exibir saldo</span>
+            <span v-if="exibirSaldo">Ocultar saldo</span>
+        </button>
+        <p>Saldo: <span v-if="exibirSaldo">R$ {{ saldo }}</span></p>
         <hr>
 
-        <button @click.once="executarUmaVez()">Enviar</button>
-        <p>Cliques : {{ cliques }}</p>
-
+        <!-- Teste v-if / v-else -->
+        <input type="number" id="inputIdade" @blur="setIdade()">
+        <p v-if="idade > 18">Maior de Idade</p>
+        <p v-else>Menor de idade</p>
         <hr>
 
-        <form @submit.prevent.once="prevenirUmaVez()">
-            <button type="submit">Enviar</button>
-        </form>
-        <p>Formulario : {{ formulario }}</p>
-
-        <hr>
-
-        <input type="text" @keyup.Enter="verificarTeclas($event)">
-        <p>Teclas : {{ teclas }}</p>
+        <!-- Teste v-if / v-else / v-else-if -->
+        <input type="number" id="inputNota" @blur="setNota()">
+        <p v-if="nota == ''">Informe a nota do aluno</p>
+        <p v-else-if="nota >= 7 && nota <= 10">Aluno aprovado</p>
+        <p v-else-if="nota >= 5 && nota < 7">Aluno em recuperação</p>
+        <p v-else-if="nota >= 0 && nota < 5">Aluno reprovado</p>
+        <p v-else>Nota inválida</p>
     </div>
-
+    
 </body>
 </html>
