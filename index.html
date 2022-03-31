@@ -33,6 +33,18 @@
         <p v-else-if="nota >= 5 && nota < 7">Aluno em recuperação</p>
         <p v-else-if="nota >= 0 && nota < 5">Aluno reprovado</p>
         <p v-else>Nota inválida</p>
+        <hr>
+
+        <!-- v-show -->
+        <p 
+            @mouseover="exibirAjuda = true" 
+            @mouseout="exibirAjuda = false"
+        >Exemplo de texto</p>
+
+        <div v-show="exibirAjuda">
+            <h2>Título texto ajuda</h2>
+            <p>Conteúdo do texto ajuda</p>
+        </div>
     </div>
     
 </body>

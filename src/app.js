@@ -4,7 +4,8 @@ const MyNameApp = {
             saldo: 4725.90,
             exibirSaldo: true,
             idade: 0,
-            nota: 0
+            nota: 0,
+            exibirAjuda: false
         }
     },
     methods: {
