@@ -1,19 +1,16 @@
 const MyNameApp = {
     data() {
         return {
-            saldo: 4725.90,
-            exibirSaldo: true,
-            idade: 0,
-            nota: 0,
-            exibirAjuda: false
+            // elementosHTML: `<p>Este é o <br>título </br> do meu teste</p> <a href="https://www.google.com">Google</a>`
+            saldo: 1100
         }
     },
     methods: {
-        setIdade() {
-            this.idade = inputIdade.value
+        debitar() {
+            this.saldo -= parseFloat(valor.value)
         },
-        setNota() {
-            this.nota = inputNota.value
+        creditar() {
+            this.saldo += parseFloat(valor.value)
         }
     }
 }

@@ -12,39 +12,15 @@
 <body>
 
     <div id="app">
-        <!-- Teste v-if -->
-        <button @click="exibirSaldo = !exibirSaldo">
-            <span v-if="!exibirSaldo">Exibir saldo</span>
-            <span v-if="exibirSaldo">Ocultar saldo</span>
-        </button>
-        <p>Saldo: <span v-if="exibirSaldo">R$ {{ saldo }}</span></p>
-        <hr>
+        <!-- V-html 
+        <div v-html="elementosHTML"></div>
+        -->
 
-        <!-- Teste v-if / v-else -->
-        <input type="number" id="inputIdade" @blur="setIdade()">
-        <p v-if="idade > 18">Maior de Idade</p>
-        <p v-else>Menor de idade</p>
-        <hr>
-
-        <!-- Teste v-if / v-else / v-else-if -->
-        <input type="number" id="inputNota" @blur="setNota()">
-        <p v-if="nota == ''">Informe a nota do aluno</p>
-        <p v-else-if="nota >= 7 && nota <= 10">Aluno aprovado</p>
-        <p v-else-if="nota >= 5 && nota < 7">Aluno em recuperação</p>
-        <p v-else-if="nota >= 0 && nota < 5">Aluno reprovado</p>
-        <p v-else>Nota inválida</p>
-        <hr>
-
-        <!-- v-show -->
-        <p 
-            @mouseover="exibirAjuda = true" 
-            @mouseout="exibirAjuda = false"
-        >Exemplo de texto</p>
-
-        <div v-show="exibirAjuda">
-            <h2>Título texto ajuda</h2>
-            <p>Conteúdo do texto ajuda</p>
-        </div>
+        <p v-once>Saldo Inicial : {{ saldo }}</p>
+        <p>Saldo Atual : {{ saldo }}</p>
+        <input type="text" id="valor">
+        <button @click="debitar()">Debitar</button>
+        <button @click="creditar()">Creditar</button>
     </div>
     
 </body>
