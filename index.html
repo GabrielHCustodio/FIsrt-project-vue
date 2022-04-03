@@ -12,15 +12,59 @@
 <body>
 
     <div id="app">
-        <!-- V-html 
-        <div v-html="elementosHTML"></div>
-        -->
+        <ul>
+            <li v-for="n in 5">{{ n }}</li>
+        </ul>
 
-        <p v-once>Saldo Inicial : {{ saldo }}</p>
-        <p>Saldo Atual : {{ saldo }}</p>
-        <input type="text" id="valor">
-        <button @click="debitar()">Debitar</button>
-        <button @click="creditar()">Creditar</button>
+        <hr>
+
+        <ul>
+            <li v-for="(curso , key) in cursos">{{ key +' - '+ curso }}</li>
+        </ul>
+
+        <hr>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Título</td>
+                    <td>Descrição</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="({ title, description} , key ) in cursos2">
+                    <td>{{ key }}</td>
+                    <td>{{ title}}</td>
+                    <td>{{ description }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <ul>
+            <li v-for="p in publicacoes"
+                :key="p.id"
+                style="border: 1px solid; margin-bottom: 10px;">
+                <div>
+                    {{p.publicacao}}
+                    <hr>
+                    <input type="text">
+                </div>
+            </li>
+        </ul>
+
+        <button @click="misturarPubli()">Misturar</button>
+
+        <hr>
+
+        <ul>
+            <li v-for="c in comentarios">{{ c.id }} - {{ c.comentario }}</li>
+            <button @click="adicionarElemento()">Adicionar</button>
+            <button @click="removerElemento()">Remover</button>
+            <button @click="modificarElemento()">Atualizar</button>
+        </ul>
     </div>
     
 </body>
