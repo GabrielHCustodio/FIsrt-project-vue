@@ -12,59 +12,28 @@
 <body>
 
     <div id="app">
-        <ul>
-            <li v-for="n in 5">{{ n }}</li>
-        </ul>
+        <h4>Adicionar Pacientes</h4>
+        <span>Nome: </span><input type="text" id="inputNome">
+        <span>Idade: </span><input type="text" id="inputIdade">
+        <span>Plano: </span><input type="text" id="inputPlano">
+        <button @click="adicionarPacientes()">Adicionar</button>
 
         <hr>
 
-        <ul>
-            <li v-for="(curso , key) in cursos">{{ key +' - '+ curso }}</li>
-        </ul>
+        <h4>Último paciente adicionado</h4>
+        <p v-if="pacientes.length > 0">
+            {{ ultimoPacienteAdicionado }}
+        </p>
 
         <hr>
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <td>Id</td>
-                    <td>Título</td>
-                    <td>Descrição</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="({ title, description} , key ) in cursos2">
-                    <td>{{ key }}</td>
-                    <td>{{ title}}</td>
-                    <td>{{ description }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <h4>Pacintes Plano Ouro</h4>
+        <p v-for="p in pacientePlanoOuro">{{ p.nome }}</p>
 
         <hr>
 
-        <ul>
-            <li v-for="p in publicacoes"
-                :key="p.id"
-                style="border: 1px solid; margin-bottom: 10px;">
-                <div>
-                    {{p.publicacao}}
-                    <hr>
-                    <input type="text">
-                </div>
-            </li>
-        </ul>
-
-        <button @click="misturarPubli()">Misturar</button>
-
-        <hr>
-
-        <ul>
-            <li v-for="c in comentarios">{{ c.id }} - {{ c.comentario }}</li>
-            <button @click="adicionarElemento()">Adicionar</button>
-            <button @click="removerElemento()">Remover</button>
-            <button @click="modificarElemento()">Atualizar</button>
-        </ul>
+        <h4>Pacientes cadastrados</h4>
+        <p v-for="p in pacientes">{{ p.nome }}</p>
     </div>
     
 </body>
