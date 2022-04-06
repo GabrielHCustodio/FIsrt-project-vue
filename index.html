@@ -12,28 +12,36 @@
 <body>
 
     <div id="app">
-        <h4>Adicionar Pacientes</h4>
-        <span>Nome: </span><input type="text" id="inputNome">
-        <span>Idade: </span><input type="text" id="inputIdade">
-        <span>Plano: </span><input type="text" id="inputPlano">
-        <button @click="adicionarPacientes()">Adicionar</button>
+        {{ paciente }} <br>
+        <input type="text" v-model="paciente">
 
         <hr>
 
-        <h4>Último paciente adicionado</h4>
-        <p v-if="pacientes.length > 0">
-            {{ ultimoPacienteAdicionado }}
-        </p>
+        <input type="radio" value="f" v-model="sexo">Feminino
+        <input type="radio" value="m" v-model="sexo">Masculino
+        <br> {{ sexo }}
 
         <hr>
 
-        <h4>Pacintes Plano Ouro</h4>
-        <p v-for="p in pacientePlanoOuro">{{ p.nome }}</p>
+        <select v-model="plano">
+            <option value="" disabled>Escolha seu plano</option>
+            <option value="1">Básico</option>
+            <option value="2">Premium</option>
+            <option value="3">Master</option>
+        </select>
+        <br> {{ plano }}
 
         <hr>
 
-        <h4>Pacientes cadastrados</h4>
-        <p v-for="p in pacientes">{{ p.nome }}</p>
+        <input type="checkbox" value="100" v-model="doencas">Asma
+        <input type="checkbox" value="101" v-model="doencas">Rinite
+        <input type="checkbox" value="102" v-model="doencas">Sinusite
+        <br> {{ doencas }}
+
+        <hr>
+
+        <textarea v-model="maisInformacoes"></textarea>
+        <br> {{ maisInformacoes }}
     </div>
     
 </body>
