@@ -12,36 +12,11 @@
 <body>
 
     <div id="app">
-        {{ paciente }} <br>
-        <input type="text" v-model="paciente">
-
+        <p>Paciente : </p><input type="text" v-model="paciente">
         <hr>
-
-        <input type="radio" value="f" v-model="sexo">Feminino
-        <input type="radio" value="m" v-model="sexo">Masculino
-        <br> {{ sexo }}
-
-        <hr>
-
-        <select v-model="plano">
-            <option value="" disabled>Escolha seu plano</option>
-            <option value="1">Básico</option>
-            <option value="2">Premium</option>
-            <option value="3">Master</option>
-        </select>
-        <br> {{ plano }}
-
-        <hr>
-
-        <input type="checkbox" value="100" v-model="doencas">Asma
-        <input type="checkbox" value="101" v-model="doencas">Rinite
-        <input type="checkbox" value="102" v-model="doencas">Sinusite
-        <br> {{ doencas }}
-
-        <hr>
-
-        <textarea v-model="maisInformacoes"></textarea>
-        <br> {{ maisInformacoes }}
+        <ul>
+            <li v-for="p in lista"> {{p.nome}} , {{p.idade}} </li>
+        </ul>
     </div>
     
 </body>
