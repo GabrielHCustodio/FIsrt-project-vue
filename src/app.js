@@ -1,23 +1,18 @@
 const MyNameApp = {
     data() {
         return {
-            paciente: '',
-            pacientes: [
-                {nome: 'Gabriel Henrique', idade: 21},
-                {nome: 'Guilherme Siqueira', idade: 46},
-                {nome: 'Gabriela Candido', idade: 27},
-                {nome: 'Gabriel Marques', idade: 52},
-                {nome: 'Guilherme Henrique', idade: 84}
-            ],
-            lista: []
+            nome: "Ainda não sei"
         }
     },
-    methods: {},
-    computed: {},
-    watch: {
-        paciente(valorNovo) {
-            this.lista = this.pacientes.filter( p => p.nome.match(valorNovo))
-        }
+    created() {
+        setTimeout(() => {
+            this.nome = "Gabriel"
+        }, 1000);
+    },
+    mounted() {
+        setTimeout(() => {
+            this.nome = "Pedro"
+        }, 2000);
     }
 }
 
