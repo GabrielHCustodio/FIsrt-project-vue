@@ -12,7 +12,15 @@
 <body>
 
     <div id="app">
-        <h4>Meu nome é {{ nome }}</h4>
+        <form ref="formulario">
+            <span>Nome: </span><input type="text" ref="inputNome">
+            <br>
+            <span>Comentário: </span><textarea></textarea>
+            <br>
+            <button @click.prevent="cadastrar">Cadastrar</button>
+        </form>
+        <hr>
+        {{ Comentarios }}
     </div>
     
 </body>

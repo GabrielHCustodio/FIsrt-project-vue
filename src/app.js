@@ -1,18 +1,16 @@
 const MyNameApp = {
     data() {
         return {
-            nome: "Ainda não sei"
+            Comentarios: ""
         }
     },
-    created() {
-        setTimeout(() => {
-            this.nome = "Gabriel"
-        }, 1000);
-    },
-    mounted() {
-        setTimeout(() => {
-            this.nome = "Pedro"
-        }, 2000);
+    methods: {
+        cadastrar() {
+            let name = this.$refs.inputNome.value
+            let comentary = this.$refs.formulario[1].value
+
+            this.Comentarios += `Sou: ${name} Comentário:  ${comentary}`
+        }
     }
 }
 
