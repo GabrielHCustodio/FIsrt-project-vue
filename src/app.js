@@ -1,16 +1,33 @@
 const MyNameApp = {
     data() {
         return {
-            Comentarios: ""
+            nome: "",
+            comentario: "",
+            data: ""
         }
     },
     methods: {
         cadastrar() {
-            let name = this.$refs.inputNome.value
-            let comentary = this.$refs.formulario[1].value
+        let tempoDecorrido = Date.now()
+        let dataAtual = new Date(tempoDecorrido)
+        let dataPublicacao = dataAtual.toISOString()
 
-            this.Comentarios += `Sou: ${name} Comentário:  ${comentary}`
+        let comentarios = JSON.parse(localStorage.getItem('comentarios'))
+
+        if(!comentarios) comentarios = []
+
+        comentarios.push({
+          nome: this.nome,
+          comentario: this.comentario,
+          data: dataPublicacao
+        })
+
+        localStorage.setItem('comentarios' , JSON.stringify(comentarios))
+
+        console.log(comentarios)
         }
+
+    
     }
 }
 
